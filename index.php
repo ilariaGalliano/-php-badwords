@@ -13,11 +13,12 @@
   <h2>Thirty Seconds to Mars</h2>
 
   <?php
-  // codice
+  // code
   $quote = 'It\'s the moment of truth, and the moment to lie
             the moment to live and the moment to die
             the moment to fight, the moment to fight.';
-  $replaced = str_replace('moment', '*** ', $quote );
+  $censored= $_GET['censored'];
+  $replaced = str_replace( $censored, '*** ', $quote );
   ?>
 
 
@@ -32,6 +33,7 @@
   <br>
   <a href="?censored=moment">Censored Lyrics</a>
   <p>Censored Lyrics: <?php echo $replaced; ?> </p>
+  <span> Censored word: <?php echo $censored;?> </span>
 
 
 </body>
